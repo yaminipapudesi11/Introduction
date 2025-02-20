@@ -1,0 +1,50 @@
+#Author: your.email@your.domain.com
+#Keywords Summary :
+#Feature: List of scenarios.
+#Scenario: Business rule through list of steps with arguments.
+#Given: Some precondition step
+#When: Some key actions
+#Then: To observe outcomes or validation
+#And,But: To enumerate more Given,When,Then steps
+#Scenario Outline: List of steps for data-driven as an Examples and <placeholder>
+#Examples: Container for s table
+#Background: List of steps run before each of the scenarios
+#""" (Doc Strings)
+#| (Data Tables)
+#@ (Tags/Labels):To group Scenarios
+#<> (placeholder)
+#""
+## (Comments)
+#Sample Feature Definition Template
+@tag
+Feature: Login Functionality
+  As a user
+  I want to log in to the application
+  So that I can access my account
+
+  @tag1
+  Scenario: Successful login with valid credentials
+    Given I am on the login page
+    When I enter valid username and password
+    And I click on the login button
+    Then I should be redirected to the homepage
+    And I should see a welcome message
+    
+  @tag3
+  Scenario: Unsuccessful login with invalid credentials
+    Given I am on the login page
+    When I enter valid username and password
+    And I click on the login button
+    Then I should see an error message
+
+
+  @tag2
+  Scenario Outline: Title of your scenario outline
+    Given I want to write a step with <name>
+    When I check for the <value> in step
+    Then I verify the <status> in step
+
+    Examples: 
+      | name  | value | status  |
+      | name1 |     5 | success |
+      | name2 |     7 | Fail    |
